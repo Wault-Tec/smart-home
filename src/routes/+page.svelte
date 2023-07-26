@@ -33,18 +33,17 @@
 	const devices = getContext("devices");
 	const devicesAll =  getContext("devicesAll");
 	const unusedDevices = getContext("unusedDevices");
+	const rooms = getContext("rooms")
 
 	/**
 	 * Store
 	 */
-	const rooms = writable([]);
 	const activeRoomId = writable("all")
 	const deviceInfo = writable({})
 
 	/**
 	 * SetContext
 	 */
-	setContext("rooms", rooms);
 	setContext("activeRoomId", activeRoomId);
 	setContext("deviceInfo", deviceInfo);
 
