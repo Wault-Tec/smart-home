@@ -49,6 +49,12 @@
         position: relative;
         transition: all .5s;
 
+        @media(hover: hover) {
+            &:hover {
+                background: linear-gradient(90deg, rgb(175, 247, 237) 0%, rgba(80,173,196,1) 35%);
+            }
+        }
+
         &.disabled {
            pointer-events: none;
            opacity: 0.5;

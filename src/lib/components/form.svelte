@@ -34,7 +34,6 @@
      * GetContext
      */
      const isAuth = getContext("isAuth")
-     $: console.log('isAuth', $isAuth)
 
     /**
      * Fields

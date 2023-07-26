@@ -1,4 +1,7 @@
 <script>
+    /**
+     * Components
+     */
     import Form from "$lib/components/form.svelte";
 
 </script>

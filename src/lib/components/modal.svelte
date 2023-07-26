@@ -1,24 +1,44 @@
 <script>
-	export let showModal = false;
+	/**
+     * Svelte
+     */
+	import { getContext } from "svelte";
+	import { fade } from "svelte/transition";
 
-	let dialog; // HTMLDialogElement
+	/**
+     * getContext
+     */
+	const showModal = getContext("showModal")
 
-	$: if (dialog && showModal) dialog.showModal();
+	/**
+     * HTMLDialogElement
+     */
+	let dialog;
+
+	/**
+     * Reactive
+     */
+	$: if (dialog && $showModal) {
+		dialog.showModal()
+	} else if(dialog && !$showModal) {
+		dialog.close()
+	}
+
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
 	bind:this={dialog}
-	on:close={() => (showModal = false)}
+	on:close={() => ($showModal = false)}
 	on:click|self={() => dialog.close()}
 >
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div on:click|stopPropagation>
+	<div on:click|stopPropagation transition:fade={{duration: 500}}>
 		<slot />
 	</div>
 </dialog>
 
-<style>
+<style lang="scss">
 	dialog {
 		max-width: 90vw;
         width: 90vw;
@@ -26,6 +46,10 @@
 		border: none;
 		padding: 0;
         border-radius: 10px;
+
+		@media (min-width: 1280px) {
+			width: 540px;
+		}
 	}
 	dialog::backdrop {
 		background: rgba(0, 0, 0, 0.3);

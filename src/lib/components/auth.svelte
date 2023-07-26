@@ -19,12 +19,11 @@
         }
 
         if(!$isAuth) {
-            goto('/login')
+            goto('/login', {replaceState: true})
         }
     })
 
     setContext("isAuth", isAuth);
-$: console.log('isAuth', $isAuth)
 </script>
 
 <slot />
