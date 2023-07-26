@@ -101,6 +101,7 @@
 		    display: flex;
             justify-content: center;
             align-items: flex-start;
+            width: 90%;
 	    }
 
         @media (min-width: 768px) and (max-width: 1279px) {
@@ -122,7 +123,8 @@
             padding-top: 15px;
 
             @media (min-width: 1280px) {
-		        max-width: 600px;
+		        flex-direction: row;
+                flex-wrap: wrap;
 	        }
 
             @media (min-width: 768px) and (max-width: 1279px) {
@@ -140,6 +142,7 @@
 
                 @media (min-width: 1280px) {
                     height: 180px;
+                    max-width: 600px;
 	            }
 
                 @media (min-width: 768px) and (max-width: 1279px) {
