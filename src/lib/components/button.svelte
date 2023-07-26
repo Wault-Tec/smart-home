@@ -16,6 +16,9 @@
     export let type = "button"
     export let disabled = false
 
+    /**
+	 * Dispatch
+	 */
     const dispatch = createEventDispatcher();
 
 </script>

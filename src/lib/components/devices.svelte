@@ -34,7 +34,10 @@
             return names
         } else return false
     } 
-
+    
+    /**
+	 * Dispatch
+	 */
     const dispatch = createEventDispatcher();
 
 </script>

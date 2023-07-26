@@ -8,7 +8,10 @@
 	 * Components
 	 */
     import Icon from "./icon.svelte";
-
+    
+    /**
+	 * Dispatch
+	 */
     const dispatch = createEventDispatcher();
 
     export let name

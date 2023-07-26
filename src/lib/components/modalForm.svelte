@@ -88,7 +88,10 @@
     );
 
     name.validate();
-
+    
+    /**
+	 * Dispatch
+	 */
     const dispatch = createEventDispatcher();
 
     /**

@@ -117,7 +117,6 @@
 		} catch (error) {
 			console.log(error)
 		}
-		
 	}
 
 	const getRooms = async () => {
@@ -246,7 +245,6 @@
 			on:favorites={handleFavorites}/>
 		<Modal>
 			<ModalForm 
-
 				bind:success
 				on:submit={handleSubmit}/>
 		</Modal>

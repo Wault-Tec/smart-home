@@ -4,12 +4,17 @@
      */
     import { createEventDispatcher, getContext } from 'svelte';
     import { page } from '$app/stores';
+
     /**
 	 * Transition
 	 */
     import { fly } from "svelte/transition";
 
+    /**
+	 * GetContext
+	 */
     const showAdd = getContext("showAdd")
+
     /**
 	 * Components
 	 */
@@ -20,7 +25,11 @@
 	 */
 	$: url = $page.url;
 
+    /**
+	 * Dispatch
+	 */
     const dispatch = createEventDispatcher();
+
 </script>
 <div 
     class="footer"
