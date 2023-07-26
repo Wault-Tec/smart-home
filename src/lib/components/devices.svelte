@@ -56,7 +56,14 @@
                     <button class="info_room">
                         {#if checkRoom(device)}
                             {#each checkRoom(device) as name}
-                                {name}
+                                <span 
+                                    class="info_room--name"
+                                    on:click={() => {
+                                        $activeRoomId = device?.room_id
+                                        window?.scrollTo({top: 0,  behavior: "smooth"})
+                                }}>
+                                    {name}
+                                </span>
                             {/each}
                         {:else}
                             <div class="info_attach">
@@ -236,6 +243,15 @@
                         font-weight: 200;
                         font-size:15px;
                         color: #F9F9F9;
+
+                        & .info_room--name {
+                            transition: all .3s;
+                            @media(hover: hover) {
+                                &:hover {
+                                    color: #d2f3f7;
+                                }
+                            }
+                        }
 
                         @media (min-width: 1280px) {
                             font-size:18px;
